@@ -83,7 +83,7 @@
 .add-task-container{
     position: relative;
     width: 80%;
-    margin: -450px auto ;
+    margin: -500px auto ;
     border-radius: 50px;
     background-color: white;
     display: flex;
@@ -120,6 +120,58 @@
     flex: 0.2;
 }
 .add-task-container .add-task-btn{
+    margin: 20px 0px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: blueviolet;
+    color: white;
+    font-size: 15px;   
+}
+.update-task-app{
+    display: none;
+}
+.update-task-container{
+    position: relative;
+    width: 80%;
+    margin: -500px auto ;
+    border-radius: 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+.update-task-container i{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 23px;
+}
+.update-task-container h2{
+    margin: 10px auto;
+}
+.update-task-container .task-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 10px;   
+}
+.update-task-container .task-input input{
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: lavender;
+}
+.update-task-container .task-input label{
+    flex: 0.2;
+}
+.update-task-container .add-task-btn{
     margin: 20px 0px;
     padding: 10px 20px;
     border-radius: 10px;

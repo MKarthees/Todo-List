@@ -60,10 +60,28 @@
         <button class="add-task-btn" onclick="addTask()">Add New Task</button>
     </div>
 </div>
-<!-- <div class="update">
-<input type="text" class="update-no" >
-<button onclick="updateTask(event)">Submit</button>
-</div> -->
+<div class="update-task-app">
+  <div class="update-task-container">
+      <i class="fa fa-xmark" onclick="newTaskAppClose()"></i>
+      <h2>Update Todo LIst</h2>
+
+      <div class="task-input">
+          <label>S.No: </label>
+          <input type="text" class="update-task-no" placeholder="Enter New Task No">
+      </div>
+
+      <div class="task-input">
+          <label>Task Name: </label>
+          <input type="text" class="update-task-name" placeholder="Enter New Task Name">
+      </div>
+                  
+      <div class="task-input">
+          <label>Task Status: </label>
+          <input type="text" class="update-task-status" placeholder="Enter New Task Status">
+      </div>
+
+      <button class="add-task-btn" onclick="updateTask(event)">Update Task</button>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>
