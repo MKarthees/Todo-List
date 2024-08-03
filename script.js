@@ -1,69 +1,42 @@
-var overlay = document.querySelector(".overlay");
-var addtaskapp = document.querySelector(".add-task-app");
-var taskItems = document.querySelector(".list-items");
-var taskNo = document.querySelector(".task-no");
-var taskName = document.querySelector(".task-name");
-var taskStatus = document.querySelector(".task-status");
-var taskUpdate = document.querySelector(".update-task-app");
-var updateTaskNo = document.querySelector(".update-task-no");
-var updateTaskName=document.querySelector(".update-task-name");
-var updateTaskStatus=document.querySelector(".update-task-status");
-var div = document.createElement("div");
+let addTaskBox=document.getElementById("addTaskBox");
+let taskList=document.querySelector(".task-list");
+let updateTaskApp=document.querySelector(".update-container");
+let inputBox=document.querySelector(".input-box");
 
-function addTask(){
-    if(taskNo.value=="" || taskName.value=="" || taskStatus.value==""){
-        alert("Please Enter All Field");
+function addTask() {
+    if (addTaskBox.value==="") {
+        alert("Enter Task")
     }
     else{
-    div.innerHTML=`<div class="task"><label>${taskNo.value}</label>
-                    <li>${taskName.value}</li>
-                    <li>${taskStatus.value}</li>
-                    <i class="fa fa-pen-to-square" onclick="updateTaskApp()"></i>
-                    <i class="fa fa-trash" onclick="removeTask(event)"></i></div>`;
-    taskItems.appendChild(div);
-
+        let task=document.createElement("li");
+        task.innerHTML=`<span><p>${addTaskBox.value}</p><input type="text" placeholder="Update Task"><i class="fa fa-edit edit" onclick="update(event)"></i>
+        <i class="fa fa-xmark remove" onclick="removeTask(event)"></i></span>`;
+        taskList.appendChild(task);
     }
-    taskNo.value="";
-    taskName.value="";
-    taskStatus.value="";
-    saveData();
+    addTaskBox.value="";
+    savedate();
 }
 
-function updateTaskApp(){
-    overlay.style.display="block";
-    taskUpdate.style.display="block";
+function closePopup() {
+    updateTaskApp.style.display="none";
 }
-function updateTask(event){
-        console.log(div.firstChild);
-        // div.children[1].innerHTML=updateTaskNo.value;
-        // div.children[2].innerHTML=updateTaskName.value;
-        // div.children[3].innerHTML=updateTaskStatus.value;
-    
-    
+
+function update(event) {
+   event.target.parentElement.children[0].innerHTML=event.target.parentElement.children[1].value;
+   event.target.parentElement.children[1].value="";
+   savedate();
+   
 }
 
 function removeTask(event){
     event.target.parentElement.remove();
-    saveData();
+    savedate();
 }
 
-
-function newTaskAppOpen(){
-    overlay.style.display="block";
-    addtaskapp.style.display="block";
+function savedate() {
+    localStorage.setItem("data",taskList.innerHTML);
 }
-
-function newTaskAppClose(){
-    overlay.style.display="none";
-    addtaskapp.style.display="none";
-    taskUpdate.style.display="none";
-    }
-
-function saveData(){
-    localStorage.setItem("data",taskItems.innerHTML);
-    }
-
-    function showData(){
-        taskItems.innerHTML= localStorage.getItem("data");
-    }
-showData();
+function showTask() {
+    taskList.innerHTML = localStorage.getItem("data");
+}
+showTask();

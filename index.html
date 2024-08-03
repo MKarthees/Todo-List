@@ -1,87 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Update</title>
+    <link rel="stylesheet" href="../webfonts/all.min.css">
+    <link rel="stylesheet" href="../webfonts/fontawesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../webfonts/all.min.css" />
-    <link rel="stylesheet" href="../webfonts/fontawesome.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="todo-container">
-            <div class="todo-app">
-                <h1>Todo List</h1>
-                <button class="new-task-btn" onclick="newTaskAppOpen()">Add New Task</button>
-            </div>
-            <div class="list-heading">
-                <p>S.No</p>
-                <p>Task Name</p>
-                <p>Task Status</p>
-                <p>Edit</p>
-                <p>Remove</p>
-            </div>
-            <div class="list-items">
-                
-            </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="todo-app">
+        <h1>Todo-List</h1>
+        <div class="task">
+            <label>Task Name :</label>
+            <input type="text" id="addTaskBox" class="input-box" placeholder="Enter New Task">
+            <button class="btn" onclick="addTask()">Add Task</button>
         </div>
-    </div>
-    <div class="add-task-app">
-    <div class="add-task-container">
-        <i class="fa fa-xmark" onclick="newTaskAppClose()"></i>
-        <h2>Add Todo LIst</h2>
-
-        <div class="task-input">
-            <label>S.No: </label>
-            <input type="text" class="task-no" placeholder="Enter Task No">
+        <div class="task-list">
+        
         </div>
-
-        <div class="task-input">
-            <label>Task Name: </label>
-            <input type="text" class="task-name" placeholder="Enter Task Name">
-        </div>
-                    
-        <div class="task-input">
-            <label>Task Status: </label>
-            <input type="text" class="task-status" placeholder="Enter Task Status">
-        </div>
-
-        <button class="add-task-btn" onclick="addTask()">Add New Task</button>
     </div>
 </div>
-<div class="update-task-app">
-  <div class="update-task-container">
-      <i class="fa fa-xmark" onclick="newTaskAppClose()"></i>
-      <h2>Update Todo LIst</h2>
 
-      <div class="task-input">
-          <label>S.No: </label>
-          <input type="text" class="update-task-no" placeholder="Enter New Task No">
-      </div>
-
-      <div class="task-input">
-          <label>Task Name: </label>
-          <input type="text" class="update-task-name" placeholder="Enter New Task Name">
-      </div>
-                  
-      <div class="task-input">
-          <label>Task Status: </label>
-          <input type="text" class="update-task-status" placeholder="Enter New Task Status">
-      </div>
-
-      <button class="add-task-btn" onclick="updateTask(event)">Update Task</button>
-  </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
